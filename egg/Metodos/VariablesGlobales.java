@@ -17,13 +17,15 @@ public class VariablesGlobales {
         System.out.println("Me llamo " + nombre + " y tengo " + edad + " años.");
     }
 
-    public static String obtenerNombre(Scanner nombre) {
+    public static String obtenerNombre(Scanner consola) {
         System.out.print("Ingrese su nombre: ");
-        return nombre.nextLine();
+        String nombre = consola.nextLine();
+        return nombre;
     }
 
-    public static int obtenerEdad(Scanner edad) {
+    public static int obtenerEdad(Scanner consola) {
         System.out.print("Ingrese su edad: ");
-        return edad.nextInt();
+        int edad = consola.nextInt();
+        return edad;
     }
 }

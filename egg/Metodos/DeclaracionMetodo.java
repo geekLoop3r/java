@@ -1,8 +1,16 @@
 package egg.Metodos;
 
+import java.util.Scanner;
+
 public class DeclaracionMetodo {
+    public static Scanner consola = new Scanner(System.in);
+
     public static void main(String[] args) {
-        imprimirSaludo(pasarAMayusculas("hipolito"));
+        String club = obtenerClub(consola);
+        int puntos = obtenerPuntos(consola);
+        consola.close();
+
+        System.out.println("Club: " + club + ", " + puntos);
     }
     
     // fijarnos en la estructura del main
@@ -11,11 +19,18 @@ public class DeclaracionMetodo {
     // void: tipo de dato que voy a devolver, en este caso será vacío
     // nombre del método
 
-    private static void imprimirSaludo(String usuario) {
-        System.out.println("Hola mundo de " + usuario);
+    // private static void imprimirSaludo(String usuario) {
+    //     System.out.println("Hola mundo de " + usuario);
+    // }
+
+    public static String obtenerClub(Scanner consol) {
+        System.out.print("Ingresa el nombre del club: ");
+        return consol.nextLine();
     }
 
-    private static String pasarAMayusculas(String palabra){
-        return palabra.toUpperCase();
+    public static int obtenerPuntos(Scanner sc) {
+        System.out.print("Ingresa los puntos del club: ");
+        return sc.nextInt();
     }
+
 }
